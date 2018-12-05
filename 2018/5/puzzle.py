@@ -2,6 +2,7 @@
 
 import sys
 
+
 def react(polymer):
     i, unstable = 0, True
 
