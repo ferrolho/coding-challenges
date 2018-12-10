@@ -15,10 +15,10 @@ def main():
     vel = points[:, [2, 3]]
 
     counter = -2
-    shrinking = False
+    shrinking = True
     sky_shape_prev = None
 
-    while not shrinking:
+    while shrinking:
         counter += 1
 
         x_min = min(pos[:, 0])
@@ -58,7 +58,7 @@ def main():
             print('Part 1:\n{}'.format(sky_str))
             print('Part 2: {} seconds'.format(counter))
 
-            shrinking = True
+            shrinking = False
 
         sky_shape_prev = sky_shape
         pos += vel
