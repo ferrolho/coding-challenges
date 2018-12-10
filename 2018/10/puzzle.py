@@ -40,14 +40,9 @@ def main():
             # Create empty sky
             sky = np.full(sky_shape_prev, ' ', dtype=str)
 
-            x_min = min(pos[:, 0])
-            y_min = min(pos[:, 1])
-
             # Translate sky to positive quadrant
-            if x_min != 0:
-                pos[:, 0] -= x_min
-            if y_min != 0:
-                pos[:, 1] -= y_min
+            pos[:, 0] -= min(pos[:, 0])
+            pos[:, 1] -= min(pos[:, 1])
 
             # Mark poins in sky
             for (x, y) in pos:
