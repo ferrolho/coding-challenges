@@ -1,0 +1,7 @@
+name = "Advent2019"
+uuid = "14784a84-53a6-491f-b53f-dc1a71467a96"
+authors = ["Henrique Ferrolho <henriqueferrolho@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
