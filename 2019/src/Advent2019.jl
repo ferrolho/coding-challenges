@@ -7,6 +7,7 @@ greet() = println("Hello, Advent of Code 2019!")
 
 include("../01/puzzle.jl")
 include("../02/puzzle.jl")
+include("../03/puzzle.jl")
 
 export greet
 
