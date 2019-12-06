@@ -1,5 +1,3 @@
-using DelimitedFiles
-
 function day1()
     numbers = vec(readdlm("./01/input.txt", Int))
 

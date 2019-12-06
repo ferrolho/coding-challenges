@@ -1,6 +1,3 @@
-using DelimitedFiles
-using SparseArrays
-
 function day3()
     grid_size = 100_000
     grid_wire_1 = spzeros(grid_size, grid_size)

@@ -1,5 +1,3 @@
-using DelimitedFiles
-
 function day5(inputs::Array)
     program = vec(readdlm("./05/input.txt", ',', Int))
 

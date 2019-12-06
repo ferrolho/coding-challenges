@@ -1,5 +1,3 @@
-using DelimitedFiles
-
 function day4()
     input = vec(readdlm("./04/input.txt", '-', Int))
     range = input[1]:input[2]

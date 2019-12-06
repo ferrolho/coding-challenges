@@ -1,7 +1,9 @@
 module Advent2019
 
 # using Colors
+using DelimitedFiles
 # using Plots
+using SparseArrays
 
 greet() = println("Hello, Advent of Code 2019!")
 

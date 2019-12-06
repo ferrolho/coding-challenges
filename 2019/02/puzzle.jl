@@ -1,5 +1,3 @@
-using DelimitedFiles
-
 function day2_part1(program, noun, verb)
     # Julia is 1-indexed
     pos(x) = x + 1
