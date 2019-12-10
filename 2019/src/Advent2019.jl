@@ -1,7 +1,8 @@
 module Advent2019
 
-# using Colors
+using DataStructures
 using DelimitedFiles
+using LinearAlgebra: norm
 using Plots
 using SparseArrays
 
@@ -16,6 +17,7 @@ include("../06/puzzle.jl")
 include("../07/puzzle.jl")
 include("../08/puzzle.jl")
 include("../09/puzzle.jl")
+include("../10/puzzle.jl")
 
 export greet
 
