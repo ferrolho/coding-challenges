@@ -8,6 +8,7 @@ using SparseArrays
 greet() = println("Hello, Advent of Code 2018!")
 
 include("../14/puzzle.jl")
+include("../15/puzzle.jl")
 
 export greet
 
