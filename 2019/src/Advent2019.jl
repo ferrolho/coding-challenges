@@ -23,6 +23,7 @@ include("../11/puzzle.jl")
 include("../12/puzzle.jl")
 include("../13/puzzle.jl")
 include("../14/puzzle.jl")
+include("../15/puzzle.jl")
 
 export greet
 
