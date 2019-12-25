@@ -1,9 +1,10 @@
 module Advent2019
 
+using BenchmarkTools
 using DataStructures
 using DelimitedFiles
 using IterTools
-using LinearAlgebra: norm
+using LinearAlgebra: ⋅, norm
 using Plots
 using SparseArrays
 
@@ -24,6 +25,7 @@ include("../12/puzzle.jl")
 include("../13/puzzle.jl")
 include("../14/puzzle.jl")
 include("../15/puzzle.jl")
+include("../16/puzzle.jl")
 
 export greet
 
