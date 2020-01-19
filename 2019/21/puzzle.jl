@@ -9,6 +9,7 @@ function day21()
         # Execute Intcode program
         i = 0
         rel_base = 0
+        println("Starting computer...")
         while get(i) != 99
             instruction = get(i)
             opcode = get_digit(instruction, 1)
@@ -41,8 +42,8 @@ function day21()
             elseif opcode == 4  # Opcode: output
                 val1 = mode_1 == 1 ? get(i + 1) : mode_1 == 0 ? get(get(i + 1)) : get(rel_base + get(i + 1))
                 if val1 ≥ 128  # Max ASCII value
-                    println("Amount of hull damage: $(val1)")
-                    result₁ = val1
+                    println("Amount of hull damage: $(val1)\n")
+                    push!(results, val1)
                 else
                     push!(output, val1)
                     print(val1 |> Char)
@@ -91,28 +92,54 @@ function day21()
     # Read Intcode program
     day_input = [vec(readdlm("./21/input.txt", ',', Int)) ; zeros(Int, 10000)]
 
+    results = []
+
     # Script to make the droid jump
-    springscript = ["NOT C J"  # J = abcd[1] == '.'
+    springscript = ["NOT C J"  # J = abcd[3] == '.'
                     "AND D J"  # J = abcd[4] == '#' && J
                                # if "??.#" then J = true
                     "NOT A T"  # T = abcd[1] == '.'
                                # if ".???" then T = true
-                    "OR T J"  # J = T || J
+                    "OR  T J"  # J = T || J
                     "WALK"
                     ""]
 
     # Joining instructions with "\n"
     springscript = join(springscript, "\n")
-
     inputs = [Int(c) for c in springscript]
 
     # Run program
     program = day_input |> copy
     output = Char[]  # Output from Intcode will be saved here
-    result₁ = -1
-    compute(inputs)
+    compute(inputs |> copy)
 
-    # result₁, result₂
+    # Script to make the droid jump
+    springscript = [# Let us consider to jump right now:
+                    "NOT E T \n OR  T J"  # if there is a hole immediately after (E)
+                    "NOT H T \n AND T J"  # and nowhere to land for the 2nd jump (H)
+                    "NOT J J"             # give up from jumping! (sets J = False)
+
+                    "NOT A T \n OR  A T"  # T = true (this will act as a flag)
+
+                    "AND A T \n AND B T \n AND C T"  # T = true iff no hole in A|B|C
+                    "NOT T T"                        # T = true if there is a hole in A|B|C
+                    "AND D T"                        # T still true iff D is '#'
+
+                    "AND T J"  # JUMP only if the two conditions above are true
+
+                    "RUN"
+                    ""]
+
+    # Joining instructions with "\n"
+    springscript = join(springscript, "\n")
+    inputs = [Int(c) for c in springscript]
+
+    # Run program
+    program = day_input |> copy
+    output = Char[]  # Output from Intcode will be saved here
+    compute(inputs |> copy)
+
+    return tuple(results...)
 end
 
 export day21
