@@ -1,0 +1,8 @@
+name = "AdventOfCode2020"
+uuid = "58431eaf-e7ad-48ce-9a0d-e50210bea6f0"
+authors = ["Henrique Ferrolho <henriqueferrolho@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
