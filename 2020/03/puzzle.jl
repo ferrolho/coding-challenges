@@ -1,6 +1,6 @@
 function day3()
-    lines = readdlm(joinpath(@__DIR__, "input.txt"), String)  # Read lines from input file
-    trees = map(==('#'), hcat(collect.(lines)...))'  # Transform input to ::Array{Bool,2}
+    input = joinpath(@__DIR__, "input.txt")
+    trees = mapreduce(collect, hcat, eachline(input)) |> permutedims
 
     function count_trees_for_slope(trees, slope)
         # Number of coordinates to be checked
@@ -16,7 +16,7 @@ function day3()
         cs = map(x -> x % size(trees, 2) + 1, cs)
 
         idxs = CartesianIndex.(rs, cs)
-        count(trees[idxs])
+        count(==('#'), trees[idxs])
     end
 
     function part1(trees)
@@ -31,7 +31,7 @@ function day3()
                   (right = 7, down = 1)
                   (right = 1, down = 2)]
 
-        mapreduce(x -> count_trees_for_slope(trees, x), *, slopes)
+        prod(x -> count_trees_for_slope(trees, x), slopes)
     end
 
     result₁ = part1(trees)
