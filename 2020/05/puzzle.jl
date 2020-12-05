@@ -25,4 +25,26 @@ function day5()
     result₁, result₂
 end
 
+"""
+Alternative solution to day 5. It is a modification to my original solution, which
+replaces the `seatid` function with a clever one-liner I found in an online discussion.
+The trick: converting the boarding pass to a 10-bit integer directly results in the seat ID.
+"""
+function day5spoiled()
+    input = joinpath(@__DIR__, "input.txt")
+    bps = readlines(input)
+
+    # This is the clever one-liner stolen from Reddit.
+    seatid(bp) = parse(Int, map(c -> c ∈ ('B', 'R') ? '1' : '0', bp), base=2)
+
+    seat_ids = seatid.(bps)
+    max_id = maximum(seat_ids)
+    min_id = minimum(seat_ids)
+
+    result₁ = max_id
+    result₂ = setdiff(min_id:max_id, seat_ids) |> only
+
+    result₁, result₂
+end
+
 export day5
