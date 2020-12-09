@@ -7,7 +7,7 @@ function day9()
     function part1(data; preamble=25)
         for i = preamble + 1:length(data)
             number = data[i]
-            valid = data[i - preamble:i - 1]
+            valid = @view data[i - preamble:i - 1]
 
             !validsum(number, valid) && return number
         end
@@ -16,11 +16,10 @@ function day9()
     function part2(data, target; preamble=25)
         for i = 1:length(data) - 1  # idx of contiguous set *start*
             for j = i + 1:length(data)  # idx of contiguous set *end*
-                total = sum(data[i:j])
+                window = @view data[i:j]
+                total = sum(window)
                 if total == target
-                    min = minimum(data[i:j])
-                    max = maximum(data[i:j])
-                    return min + max
+                    return sum(extrema(window))
                 elseif total > target
                     break
                 end
@@ -30,6 +29,9 @@ function day9()
 
     result₁ = part1(data)
     result₂ = part2(data, result₁)
+
+    # @btime $part1($data)
+    # @btime $part2($data, $result₁)
 
     result₁, result₂
 end
