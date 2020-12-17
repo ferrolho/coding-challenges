@@ -23,5 +23,6 @@ include("../13/puzzle.jl")
 include("../14/puzzle.jl")
 include("../15/puzzle.jl")
 include("../16/puzzle.jl")
+include("../17/puzzle.jl")
 
 end # module
