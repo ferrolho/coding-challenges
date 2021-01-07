@@ -1,6 +1,7 @@
 module AdventOfCode2015
 
 using BenchmarkTools
+using JSON
 using LinearAlgebra
 using MD5
 
@@ -16,5 +17,6 @@ include("../07/puzzle.jl")
 include("../08/puzzle.jl")
 include("../10/puzzle.jl")
 include("../11/puzzle.jl")
+include("../12/puzzle.jl")
 
 end # module
