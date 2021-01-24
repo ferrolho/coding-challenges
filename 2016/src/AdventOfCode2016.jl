@@ -5,6 +5,8 @@ using Combinatorics
 using LinearAlgebra
 using MD5
 
+import Base.length
+
 greet() = println("Hello, Advent of Code 2016!")
 
 include("../04/puzzle.jl")
@@ -22,5 +24,6 @@ include("../15/puzzle.jl")
 include("../16/puzzle.jl")
 include("../17/puzzle.jl")
 include("../18/puzzle.jl")
+include("../19/puzzle.jl")
 
 end # module
