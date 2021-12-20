@@ -1,6 +1,7 @@
 module AdventOfCode2021
 
 using DelimitedFiles
+using InlineTest
 using IterTools
 using StaticArrays
 
