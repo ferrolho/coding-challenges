@@ -1,0 +1,14 @@
+name = "AdventOfCode2021"
+uuid = "4934216c-a8f9-4242-b09c-c71bf2ae33f3"
+authors = ["Henrique Ferrolho <henrique.ferrolho@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+IterTools = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+
+[compat]
+IterTools = "1.4"
+StaticArrays = "1.2"
