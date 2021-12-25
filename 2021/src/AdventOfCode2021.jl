@@ -6,6 +6,7 @@ using InlineTest
 using IterTools
 using LinearAlgebra
 using StaticArrays
+using Statistics
 
 greet() = println("Hello, Advent of Code 2021!")
 
@@ -17,5 +18,6 @@ include("../03/puzzle.jl")
 include("../04/puzzle.jl")
 include("../05/puzzle.jl")
 include("../06/puzzle.jl")
+include("../07/puzzle.jl")
 
 end # module
