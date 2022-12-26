@@ -1,7 +1,3 @@
 # Advent of Code
 
-:santa: :christmas_tree: :gift:
-
-My solutions for the Advent of Code problems.
-
-I might write something here, eventually.
+My solutions to [Advent of Code](https://adventofcode.com/) problems. :santa: :christmas_tree: :gift:
