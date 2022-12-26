@@ -1,0 +1,9 @@
+name = "AdventOfCode2022"
+uuid = "d500e8ff-d81f-4026-9325-1d611c1de56a"
+authors = ["Henrique Ferrolho <henrique.ferrolho@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+InlineTest = "bd334432-b1e7-49c7-a2dc-dd9149e4ebd6"
+ReTest = "e0db7c4e-2690-44b9-bad6-7687da720f89"
