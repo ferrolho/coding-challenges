@@ -3,6 +3,7 @@ module AdventOfCode2022
 using DelimitedFiles
 using InlineTest
 using IterTools
+using LinearAlgebra
 
 greet() = print("Hello, Advent of Code 2022!")
 
@@ -13,7 +14,7 @@ include("../04/puzzle.jl")
 include("../05/puzzle.jl")
 include("../06/puzzle.jl")
 include("../07/puzzle.jl")
-# include("../08/puzzle.jl")
+include("../08/puzzle.jl")
 # include("../09/puzzle.jl")
 # include("../10/puzzle.jl")
 # include("../11/puzzle.jl")
