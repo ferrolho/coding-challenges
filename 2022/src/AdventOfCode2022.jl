@@ -30,7 +30,7 @@ include("../13/puzzle.jl")
 # include("../21/puzzle.jl")
 # include("../22/puzzle.jl")
 # include("../23/puzzle.jl")
-# include("../24/puzzle.jl")
+include("../24/puzzle.jl")
 include("../25/puzzle.jl")
 
 end # module AdventOfCode2022
