@@ -1,6 +1,3 @@
-import LinearAlgebra: CartesianIndex as CI
-import LinearAlgebra: CartesianIndices as CIs
-
 function day24_parseinput(filename=joinpath(@__DIR__, "input.txt"))
     char_to_direction = Dict(
         '^' => CI(-1, 0),

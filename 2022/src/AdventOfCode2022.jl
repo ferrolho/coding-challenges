@@ -5,6 +5,9 @@ using InlineTest
 using IterTools
 using LinearAlgebra
 
+import LinearAlgebra: CartesianIndex as CI
+import LinearAlgebra: CartesianIndices as CIs
+
 greet() = print("Hello, Advent of Code 2022!")
 
 include("../01/puzzle.jl")
@@ -29,7 +32,7 @@ include("../13/puzzle.jl")
 # include("../20/puzzle.jl")
 # include("../21/puzzle.jl")
 # include("../22/puzzle.jl")
-# include("../23/puzzle.jl")
+include("../23/puzzle.jl")
 include("../24/puzzle.jl")
 include("../25/puzzle.jl")
 
