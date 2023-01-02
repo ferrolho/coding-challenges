@@ -1,5 +1,6 @@
 module AdventOfCode2022
 
+using DataStructures
 using DelimitedFiles
 using InlineTest
 using IterTools
@@ -29,7 +30,7 @@ include("../13/puzzle.jl")
 # include("../17/puzzle.jl")
 # include("../18/puzzle.jl")
 # include("../19/puzzle.jl")
-# include("../20/puzzle.jl")
+include("../20/puzzle.jl")
 include("../21/puzzle.jl")
 include("../22/puzzle.jl")
 include("../23/puzzle.jl")
