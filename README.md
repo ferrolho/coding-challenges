@@ -1,3 +1,3 @@
-# Advent of Code
+# Coding Challenges
 
-My solutions to [Advent of Code](https://adventofcode.com/) problems. :santa: :christmas_tree: :gift:
+My very own solutions to various online coding challenges
