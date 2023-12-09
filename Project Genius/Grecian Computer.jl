@@ -45,6 +45,10 @@ function calculate!(state, layers...)
     state
 end
 
+function rotate!(layer)
+    layer .= circshift(layer, (0, 1))
+end
+
 function solve!(state, layer_1, layer_2, layer_3, layer_4, layer_5)
     for _ in 1:12
         for _ in 1:12
@@ -54,19 +58,19 @@ function solve!(state, layer_1, layer_2, layer_3, layer_4, layer_5)
                     calculate!(state, layer_1, layer_2, layer_3, layer_4, layer_5)
                     all(==(42), sum(state, dims=1)) && return
 
-                    layer_5 = circshift(layer_5, (0, 1))
+                    rotate!(layer_5)
                 end
-                layer_4 = circshift(layer_4, (0, 1))
+                rotate!(layer_4)
             end
-            layer_3 = circshift(layer_3, (0, 1))
+            rotate!(layer_3)
         end
-        layer_2 = circshift(layer_2, (0, 1))
+        rotate!(layer_2)
     end
 end
 
 function solve()
     layers = get_layers()
-    state = zeros(4, 12)
+    state = zeros(Int, 4, 12)
     solve!(state, layers...)
     state |> display
     sum(state, dims=1) |> display
